@@ -64,3 +64,4 @@ wlm/media/
 
 
 staticfiles/
+config/settings.local.py
