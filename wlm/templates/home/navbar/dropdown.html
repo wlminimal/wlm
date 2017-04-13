@@ -1,0 +1,7 @@
+{% load staticfiles nav_tags wagtailcore_tags %}
+
+<ul class="sub-menu">
+  {% for submenu in submenus %}
+    <li><a href="{% pageurl submenu %}">{{ submenu.title }}</a></li>
+  {% endfor %}
+</ul>

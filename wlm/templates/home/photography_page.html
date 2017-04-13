@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<!-- PAGEBODY -->
+<section id="page-body">
+
+    <div id="portfolio-single" class="single-portfolio">
+
+        <div class="single-content col-sticky right-float">
+              <div class="single-title">
+                 <h1><strong>{{ self.main_title }}</strong></h1>
+                 <h5 class="title-alt">{{ self.subtitle }}</h5>
+              </div>
+
+              <p>{{ self.body | richtext }}</p>
+              <p><a href="/photoshoot-inquiry" class="sr-button-with-arrow" target="_blank"><strong>Book Now</strong></a></p>
+
+              <h5 class="title-alt"><strong>Role</strong></h5>
+              <p>Fashion, E-Commerce, Product and Portrait</p>
+
+              <h5 class="title-alt"><strong>Share</strong></h5>
+              <ul class="socialmedia-widget">
+                  <li class="facebook"><a href="#"></a></li>
+                  <li class="twitter"><a href="#"></a></li>
+                  <li class="behance"><a href="#"></a></li>
+                  <li class="pinterest"><a href="#"></a></li>
+              </ul>
+          </div> <!-- END .single-content -->
+
+        <div class="single-media left-float">
+              <ul class="sr-vertical-gallery">
+                {% image page.portfolio_image_1 width-1100 as image_1 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_1.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_2 width-1100 as image_2 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_2.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_3 width-1100 as image_3 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_3.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_4 width-1100 as image_4 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_4.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_5 width-1100 as image_5 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_5.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_6 width-1100 as image_6 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_6.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_7 width-1100 as image_7 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_7.url }}" width="1100" height="650" alt="SEO"/></li>
+                {% image page.portfolio_image_8 width-1100 as image_8 %}
+                <li class="do-anim"><img class="lazy" data-src="{{ image_8.url }}" width="1100" height="650" alt="SEO"/></li>
+
+              </ul>
+          </div> <!-- END .single-media -->
+
+      </div> <!-- END #portfolio-single -->
+
+      <div class="wrapper">
+          <div id="single-pagination">
+              <ul class="pagination">
+                  <li class="back"><a href="index.html"><span class="icon"></span></a></li>
+              </ul>
+          </div>
+      </div> <!-- END .wrapper -->
+
+</section>
+<!-- PAGEBODY -->
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/jquery.sticky-kit.min.js' %}"></script>
+{% endblock %}

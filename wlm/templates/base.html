@@ -1,0 +1,142 @@
+{% load staticfiles i18n nav_tags wagtailcore_tags %}
+{% load wagtailuserbar %}
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <!-- DEFAULT META TAGS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500" rel="stylesheet" type="text/css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" id="default-style-css"  href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="fontawesome-style-css" href="{% static 'css/font-awesome.min.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="ionic-icons-style-css" href="{% static 'css/ionicons.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="isotope-style-css"  href="{% static 'revolution/css/settings.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="isotope-style-css"  href="{% static 'revolution/css/layers.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="isotope-style-css"  href="{% static 'revolution/css/navigation.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="isotope-style-css"  href="{% static 'css/lightcase.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="isotope-style-css"  href="{% static 'css/owl.carousel.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" id="responsive-css"  href="{% static 'css/mqueries.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="{% static 'uploads/favicon.png' %}"/>
+
+    <!-- DOCUMENT TITLE -->
+    <title>Digital Agency | We like minimal |</title>
+
+
+  </head>
+
+    <body>
+
+      <!-- PAGE LOADER -->
+      <div id="page-loader" class="pulsing">
+      	<div class="loader-name"><img src="{% static 'uploads/logo-dani-dark.png' %}" srcset="files/uploads/logo-dani-dark.png 1x, files/uploads/logo-dani-dark@2x.png 2x" alt="Loader Logo"></div>
+          <div class="loader-circle">
+          	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 253.4 253.4" style="enable-background:new 0 0 253.4 253.4;" xml:space="preserve"><circle cx="126.7" cy="126.7" r="124.2"/>
+      		</svg>
+         	</div>
+      </div>
+      <!-- PAGE LOADER -->
+
+		<div id="page-content">
+      <!-- HEADER -->
+  	<header id="header" class="wrapper transparent not-sticky menu-full-center">
+  		<div class="header-inner clearfix">
+
+              <!-- LOGO -->
+              <div id="logo">
+                  <a href="/">
+                  	<img id="dark-logo" src="{% static 'uploads/logo-main.svg' %}" srcset="{% static 'uploads/logo-main.svg' %} 1x, {% static 'uploads/logo-main.svg' %} 2x" alt="Logo Dark">
+                  	<img id="light-logo" src="{% static 'uploads/logo-main-white.svg' %}" srcset="{% static 'uploads/logo-main-white.svg' %} 1x, {% static 'uploads/logo-main-white.svg' %} 2x" alt="Logo light">
+                  </a>
+              </div>
+
+
+              <!-- MAIN NAVIGATION -->
+              {% display_navbar %}
+
+  		</div> <!-- END .header-inner -->
+  	</header>
+  	<!-- HEADER end -->
+      {% wagtailuserbar %}
+
+      {% block content %}
+
+      {% endblock %}
+    </div>
+      <!-- FOOTER -->
+    <footer id="footer">
+       <!--	<div class="footer-inner wrapper">
+            <div class="column-section clearfix">
+            	<div class="column one-third">
+               		<div class="widget widget_text">
+                        <p><img src="{% static 'uploads/logo-main-footer-dark.svg' %}" srcset="{% static 'uploads/logo-main-footer-dark.svg' %} 2x" alt="Logo Dark"></p>
+                        <p>We provide perfect and professional services.<br>Covering areas of the modern communication.</p>
+                        <p>Contact us on <a href="mailto:wlminimal@gmail.com"><strong>wlminimal@gmail.com</strong></a></p>
+                   	</div>
+                </div>
+
+                <div class="column one-third">
+               		<div class="widget widget_recent_entries">
+                    	<h5 class="widget-title title-alt"><strong>Recent Posts</strong></h5>
+                        <ul>
+                            <li><a href="blog-single-classic.html">Experience the sound of a modern and clean 360° Bluetooth Speaker</a><span class="post-date">June 6, 2016</span></li>
+                            <li><a href="blog-single-classic.html">Golden rule of modern web design</a><span class="post-date">June 1, 2016</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column one-third last-col">
+               		<div class="widget widget_dribbble">
+                        <h5 class="widget-title title-alt"><strong>Latest Dribbbles</strong></h5>
+                        <div class="dribbble-widget col-4" data-user="Aditya-Chhatrala" data-count="8"></div>
+                   	</div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="footer-bottom wrapper">
+        	<div class="column-section clearfix">
+            	<div class="column one-half">
+                	<div class="widget widget_social">
+                        <ul class="socialmedia-widget">
+                            <li class="facebook"><a href="#"></a></li>
+                            <li class="twitter"><a href="#"></a></li>
+                            <li class="behance"><a href="#"></a></li>
+                            <li class="pinterest"><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column one-half last-col align-right">
+                 	<small>© 2017 by WLM - Made by <a href="mailto:wlminimal@gmail.com">We like minimal</a></small>
+                </div>
+            </div>
+        </div>
+
+        <a id="backtotop" href="#"></a>
+
+    </footer>
+    <!-- FOOTER End -->
+    </div>
+    <!-- SCRIPTS -->
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
+    {% block script %}
+
+    {% endblock %}
+    <script type="text/javascript" src="{% static 'js/jribbble.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+
+    <!-- SCRIPTS -->
+    <script src="//localhost:35729/livereload.js"></script>
+  </body>
+</html>

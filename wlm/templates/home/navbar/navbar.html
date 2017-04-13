@@ -1,0 +1,38 @@
+{% load staticfiles nav_tags wagtailcore_tags %}
+{% get_site_root as site_root %}
+
+<!-- MAIN NAVIGATION -->
+<div id="menu" class="clearfix">
+
+  <div class="menu-actions clearfix">
+
+    <div class="menu-toggle"><span class="hamburger"></span><span class="cross"></span></div>
+  </div> <!-- END .menu-actions -->
+
+    <div id="menu-inner">
+        <nav id="main-nav">
+            <ul>
+              <li><a href="{% pageurl site_root  %}">Home</a></li>
+              {% for menuitem in menuitems %}
+                {% if menuitem.has_children %}
+                <li class="menu-item-has-children"><a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+                    {% display_dropdown parent=menuitem %}
+                </li>
+                {% else %}
+                <li><a href="{% pageurl menuitem %}">{{ menuitem.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+        </nav>
+        <div id="menu-widget">
+          <div class="widget widget_social">
+              <ul class="socialmedia-widget">
+                  <li class="facebook"><a href="#"></a></li>
+                  <li class="twitter"><a href="#"></a></li>
+                  <li class="behance"><a href="#"></a></li>
+                  <li class="pinterest"><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- END #main-nav -->
+</div><!-- END #menu -->

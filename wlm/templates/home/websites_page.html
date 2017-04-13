@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+
+{% block content %}
+<!-- HERO  -->
+<section id="hero" class="hero-auto">
+      <div id="page-title" class="wrapper">
+          <h1>{{ page.title_1_front }} <strong><em>{{ page.title_em_middle }}</em></strong> {{ page.title_1_end }}<br> {{ page.title_2_front }} <strong><em>{{ page.title_2_em_end }}</em></strong>.</h1>
+      </div> <!-- END #page-title -->
+  </section>
+  <!-- HERO -->
+<!-- PAGEBODY -->
+<section id="page-body">
+
+      <div class="wrapper">
+
+          <ul id="portfolio-filter" class="filter" data-related-grid="portfolio-grid">
+              <li class="active" ><a href="#" data-filter="*">Show All</a></li>
+              <li><a data-filter=".E-Commerce" data-slug="E-Commerce" href="#" title="E-Commerce">E-Commerce</a></li>
+              <li><a data-filter=".Business" data-slug="Business" href="#" title="Business">Business</a></li>
+              <li><a data-filter=".Organization" data-slug="Organization" href="#" title="Organization">Organization</a></li>
+              <li><a data-filter=".Personal" data-slug="Personal" href="#" title="Personal">Personal</a></li>
+          </ul>
+
+          <div id="portfolio-grid" class="isotope-grid portfolio-container style-column-3 isotope-spaced portfolio-animation clearfix">
+            {% for child in websitesPages %}
+              {% with child=child.specific %}
+              <div class="isotope-item portfolio-item {{ child.website_category.name }}">
+                  <div class="portfolio-item-inner item-inner">
+                      <a href="{% pageurl child %}" class="thumb-hover overlay-effect text-light">
+                          {% image child.thumbnail_image width-600 as thumb_image %}
+                          <img src="{{ thumb_image.url }}" alt="Website">
+                          <div class="overlay-caption hidden bottom align-left">
+                              <span class="caption-sub portfolio-category text-animation">{{ child.website_category.name }}</span>
+                              <h3 class="caption-name portfolio-name text-animation"><strong>{{ child.project_title }}</strong></h3>
+                          </div>
+                          <span class="thumb-arrow"></span>
+                      </a>
+                  </div>
+              </div>
+              {% endwith %}
+            {% endfor %}
+
+
+
+
+          </div> <!-- END .isotope-grid -->
+
+      </div> <!-- END .wrapper -->
+
+     <div class="spacer-big"></div>
+</section>
+<!-- PAGEBODY -->
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/jquery.imagesloaded.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.isotope.min.js' %}"></script>
+{% endblock %}

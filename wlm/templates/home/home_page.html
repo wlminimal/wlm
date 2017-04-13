@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+
+{% block content %}
+  <!-- HERO  -->
+	<section id="hero" class="hero-auto">
+
+        <div class="revolution-slider-wrapper">
+            <div id="revolutionslider1" class="revolution-slider"  data-version="5.0">
+                <ul>
+
+                	<li class="text-light" data-transition="parallaxhorizontal" data-masterspeed="1200">
+                        <!-- MAIN IMAGE -->
+												{% image page.slider1_image width-1920 as slider1_image %}
+                        <img src="{{ slider1_image.url }}"  alt=""  width="1920" height="1280">
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption dani-caption align-center"
+                            data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="['-50','-50','-40','-35']"
+                            data-fontsize="['80','80','70','36']"
+							data-lineheight="['96','86','84','46']"
+							data-width="['none','full','full','full']"
+							data-height="auto"
+							data-whitespace="['nowrap','nowrap','nowrap','normal']"
+                            data-transform_idle="o:1"
+                            data-transform_in="o:0;s:500;e:Power1.easeInOut;"
+                            data-transform_out="o:0"
+                            data-start="1000"
+                            data-responsive_offset="on">
+                            <strong>{{ self.slider1_title }} <em>{{ self.slider1_title_em }}</em></strong>
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption dani-caption align-center"
+                            data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="['50','50','40','35']"
+                            data-fontsize="['36','36','30','22']"
+							data-lineheight="['46','46','38','28']"
+							data-width="['none','full','full','280px']"
+							data-height="auto"
+							data-whitespace="['nowrap','nowrap','nowrap','normal']"
+                            data-transform_idle="o:1"
+                            data-transform_in="o:0;s:500;e:Power1.easeInOut;"
+                            data-transform_out="o:0"
+                            data-start="1000"
+                            data-responsive_offset="on">
+                            {{ self.slider1_subtitle }}
+                        </div>
+                    </li> <!-- END first slide -->
+
+                    <li class="text-dark" data-transition="parallaxhorizontal" data-masterspeed="1200">
+                        <!-- MAIN IMAGE -->
+												{% image page.slider2_image width-1920 as slider2_image %}
+                        <img src="{{ slider2_image.url }}"  alt=""  width="1920" height="1280">
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption dani-caption"
+                            data-x="left" data-hoffset="['100',80',60','30']"
+                            data-y="center" data-voffset="0"
+                            data-basealign="slide"
+                            data-fontsize="['60','60','54','38']"
+							data-lineheight="['74','74','66','50']"
+							data-width="full"
+							data-height="none"
+							data-whitespace="normal"
+                            data-transform_idle="o:1"
+                            data-transform_in="o:0;s:500;e:Power1.easeInOut;"
+                            data-transform_out="o:0"
+                            data-start="1000"
+                            data-responsive_offset="on">
+                            <strong><em>{{ self.slider2_title_em }}</em></strong> <br>{{ self.slider2_title }}
+                        </div>
+                    </li> <!-- END second slide -->
+
+                    <li class="text-light" data-transition="parallaxhorizontal" data-masterspeed="1200">
+                        <!-- MAIN IMAGE -->
+												{% image page.slider3_image width-1920 as slider3_image %}
+                        <img src="{{ slider3_image.url }}"  alt=""  width="1920" height="1280">
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption dani-caption"
+                            data-x="left" data-hoffset="['100',80',60','30']"
+                            data-y="center" data-voffset="0"
+                            data-basealign="slide"
+                            data-fontsize="['60','60','54','38']"
+							data-lineheight="['74','74','66','50']"
+							data-width="full"
+							data-height="none"
+							data-whitespace="normal"
+                            data-transform_idle="o:1"
+                            data-transform_in="o:0;s:500;e:Power1.easeInOut;"
+                            data-transform_out="o:0"
+                            data-start="1000"
+                            data-responsive_offset="on">
+                            {{ self.slider3_title }} <br><strong><em>{{ self.slider3_title_em }}</em></strong> {{ self.slider3_title_2 }}
+                        </div>
+                    </li> <!-- END third slide -->
+
+
+              	</ul>
+             </div><!-- END .revolution-slider -->
+       	</div> <!-- END .revolution-slider-wrapper -->
+
+        <a href="#" id="scrolldown" class="center scroll-light"></a>
+
+    </section>
+    <!-- HERO -->
+
+	<!-- PAGEBODY -->
+	<section id="page-body">
+    	<div class="spacer-big"></div>
+
+        <div class="wrapper align-center">
+            <h1>{{ self.page_body_title_1 }} <strong><em>{{ self.page_body_title_1_em }}</em></strong> {{ self.page_body_title_2 }}<strong><em> {{ self.page_body_title_2_em }}</em></strong>.</h1>
+            <div class="spacer-medium"></div>
+            <h5 class="title-alt"><strong>{{ self.page_body_subtitle_1 }} <em>{{ self.page_body_subtitle_em }}</em> {{ self.page_body_subtitle_2 }}</strong></h5>
+          <!--  <p><a class="sr-button-icon button-medium" href="http://player.vimeo.com/video/129976307" data-rel="lightcase"><i class="fa fa-play"></i></a></p> -->
+        </div> <!-- END .wrapper -->
+
+        <div class="spacer-big"></div>
+
+        <div id="smartscroll" class="smartscroll-grid portfolio-container portfolio-animation" data-columns="2">
+					{% for website in websites %}
+						<div class="smartscroll-item portfolio-item portfolio-smart-item">
+								<div class="portfolio-item-inner item-inner">
+										<a href="portfolio-single-classic.html" class="thumb-hover text-light">
+												{% image website.thumbnail_image width-1100 as thumbnail_image %}
+												<img src="{{ thumbnail_image.url }}" alt="Portfolio">
+												<div class="overlay-caption bottom align-left">
+														<span class="caption-sub portfolio-category text-animation">{{ website.website_category }}</span>
+														<h2 class="caption-name portfolio-name text-animation"><strong>{{ website.project_title }}</strong></h2>
+												</div>
+										</a>
+								</div>
+						</div>
+					{% endfor %}
+
+       	</div> <!-- END .smart-scroll -->
+
+
+
+        <div class="spacer-big"></div>
+
+ 	</section>
+	<!-- PAGEBODY -->
+{% endblock %}
+
+
+{% block script %}
+
+
+<script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/tweenMax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.smartscroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.lightcase.min.js' %}"></script>
+
+
+{% endblock %}

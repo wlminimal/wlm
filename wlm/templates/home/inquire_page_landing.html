@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<!-- HERO  -->
+<section id="hero" class="hero-auto">
+    <div id="page-title" class="wrapper">
+        <h1>{{ page.main_title_1 }}<br> {{ page.main_title_2 }} <strong><em>{{ page.main_title_em }}</em></strong>.</h1>
+        <div class="spacer-medium"></div>
+        <h5 class="title-alt">{{ page.main_subtitle }}</h5>
+    </div> <!-- END #page-title -->
+</section>
+<!-- HERO -->
+
+<!-- PAGEBODY -->
+<section id="page-body">
+
+    <div class="wrapper">
+      <h2>{{ page.thank_you_text | richtext }}</h2>
+
+    </div> <!-- END .wrapper -->
+
+    <div class="spacer-big"></div>
+</section>
+<!-- PAGEBODY -->
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{% static 'js/jquery.imagesloaded.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.isotope.min.js' %}"></script>
+{% endblock %}

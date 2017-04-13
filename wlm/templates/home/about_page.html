@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<!-- HERO  -->
+  {% image page.hero_image width-1680 as hero_image %}
+  {% image page.est_image width-70 as est_image %}
+    <section id="hero" class="hero-big text-light parallax-section" data-parallax-image="{{ hero_image.url }}">
+        <div id="page-title" class="wrapper-small align-center">
+            <p><img src="{{ est_image.url }}" srcset="{{ est_image.url }} 1x, {{ est_image.url }} 2x" alt="Established"></p>
+            <div class="spacer-medium"></div>
+            <h6 style="color: #000000;" class="title-alt uppercase">{{ page.title_small }}</h6>
+            <h2 style="color: #000000;">{{ page.title_front }} <strong><em>{{ page.title_em }}</em></strong> {{ page.title_back }}</h2>
+        </div> <!-- END #page-title -->
+    </section>
+    <!-- HERO -->
+
+	<!-- PAGEBODY -->
+	<section id="page-body">
+
+    	<div class="spacer-big"></div>
+
+        <div class="wrapper-small align-center">
+            <h2>{{ page.main_title }}</h2>
+            <div class="column-section clearfix">
+                <div class="column one-half">
+                    <p>{{ page.description_left_col | richtext }}</p>
+                </div>
+                <div class="column one-half last-col">
+                    <p>{{ page.description_right_col | richtext }}</p>
+                </div>
+            </div>
+        </div> <!-- END .wrapper-small -->
+
+    	<div class="spacer-big"></div>
+
+
+
+    	<div class="spacer-big"></div>
+
+        <div class="wrapper-small align-center">
+            <h6 class="title-alt uppercase">{{ page.contact_title_alt }}</h6>
+            <h2>{{ page.contact_title }}</h2>
+            <div class="spacer-medium"></div>
+            <p><a href="/contact" class="sr-button button-big">Contact us</a></p>
+        </div> <!-- END .wrapper-small -->
+
+    	<div class="spacer-big"></div>
+
+ 	</section>
+	<!-- PAGEBODY -->
+
+
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/tweenMax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.backgroundparallax.min.js' %}"></script>
+{% endblock %}

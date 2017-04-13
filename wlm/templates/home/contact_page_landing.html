@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<!-- HERO  -->
+  {% image page.hero_image width-1680 as hero_image %}
+  <section id="hero" class="hero-big text-light parallax-section" data-parallax-image="{{ hero_image.url }}">
+      <div id="page-title" class="post-title wrapper title-bottom">
+          <h1>{{ page.main_title_1 }}<br>{{ page.main_title_2 }}</h1>
+          <div class="spacer-small"></div>
+          <h5 class="title-alt">{{ page.main_subtitle | richtext }}</h5>
+      </div> <!-- END #page-title -->
+  </section>
+  <!-- HERO -->
+
+<!-- PAGEBODY -->
+<section id="page-body">
+    <div class="spacer-big"></div>
+    <div class="wrapper-small">
+      <h1>{{ page.thank_you_text | richtext }}</h1>
+
+    </div>
+</section>
+<div class="spacer-big"></div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{% static 'js/tweenMax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.backgroundparallax.min.js' %}"></script>
+{% endblock %}

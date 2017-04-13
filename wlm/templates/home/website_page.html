@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    <!-- PAGEBODY -->
+	<section id="page-body">
+    <div id="portfolio-single" class="single-portfolio">
+
+            	<div class="single-content col-sticky left-float">
+                   	<div class="single-title">
+                       <h1><strong>{{ page.project_title }}</strong></h1>
+                       <h5 class="title-alt">{{ page.project_category }}</h5>
+                   	</div>
+
+                   	{{ page.project_description | richtext }}
+                   	<h5 class="title-alt"><strong><a href="{{ page.website_url }}">Visit Website</a></strong></h5>
+                    <p>{{ page.project_category }}</p>
+
+                    <h5 class="title-alt"><strong>Share</strong></h5>
+                   	<ul class="socialmedia-widget">
+                        <li class="facebook"><a href="#"></a></li>
+                        <li class="twitter"><a href="#"></a></li>
+                        <li class="behance"><a href="#"></a></li>
+                        <li class="pinterest"><a href="#"></a></li>
+                    </ul>
+                </div> <!-- END .single-content -->
+
+            	<div class="single-media right-float">
+                    <ul class="sr-vertical-gallery">
+                      {% image page.website_image_1 width-1100 as website_image_1 %}
+                    	<li class="do-anim"><img class="lazy" data-src="{{ website_image_1.url }}" width="1100" height="650" alt="website portfolio"/></li>
+                      {% image page.website_image_2 width-1100 as website_image_2 %}
+                      <li class="do-anim"><img class="lazy" data-src="{{ website_image_2.url }}" width="1100" height="650" alt="website portfolio"/></li>
+                      {% image page.website_image_3 width-1100 as website_image_3 %}
+                      <li class="do-anim"><img class="lazy" data-src="{{ website_image_3.url }}" width="1100" height="650" alt="website portfolio"/></li>
+                      {% image page.website_image_4 width-1100 as website_image_4 %}
+                      <li class="do-anim"><img class="lazy" data-src="{{ website_image_4.url }}" width="1100" height="650" alt="website portfolio"/></li>
+                    </ul>
+                </div> <!-- END .single-media -->
+
+            </div> <!-- END #portfolio-single -->
+
+            <div class="wrapper">
+                <div id="single-pagination" class="portfolio-pagination">
+                    <ul class="pagination">
+                      <li class="back"><a href="/websites"><span class="icon"></span></a></li>
+                    </ul>
+                </div>
+            </div> <!-- END .wrapper -->
+
+ 	</section>
+	<!-- PAGEBODY end -->
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/tweenMax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.backgroundparallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky-kit.min.js' %}"></script>
+{% endblock %}

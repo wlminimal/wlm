@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% load staticfiles i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+
+
+<!-- HERO  -->
+<section id="hero" class="hero-big" style="background:rgba(98,188,250,0.1);">
+      <div id="page-title" class="wrapper">
+          <h1>{{ page.main_title1 }} <strong><em>{{ page.main_title1_em}}</em></strong> <br>{{ page.main_title2 }} <strong><em>{{ page.main_title2_em }}</em></strong></h1>
+          <div class="spacer-small"></div>
+          {{ page.main_subtitle_first | richtext }}
+          {{ page.main_subtitle_second | richtext }}
+      </div> <!-- END #page-title -->
+  </section>
+  <!-- HERO -->
+
+<!-- PAGEBODY -->
+<section id="page-body">
+    <div class="spacer-big"></div>
+
+        <div class="wrapper">
+
+        <div class="column-section clearfix">
+            <div class="column one-third align-center">
+              {% image page.first_image width-300 as first_image %}
+                <img src="{{ first_image.url }}" alt="make websites">
+                <h3>{{ page.what_we_do_first }}</h3>
+                  <p>{{ page.first_description | richtext }}</p>
+              </div>
+              <div class="column one-third align-center">
+                {% image page.second_image width-300 as second_image %}
+                <img src="{{ second_image.url }}" alt="photography">
+                <h3>{{ page.what_we_do_second }}</h3>
+                  <p>{{ page.second_description | richtext  }}</p>
+              </div>
+              <div class="column one-third last-col align-center">
+                {% image page.third_image width-300 as third_image %}
+                <img src="{{ third_image.url }}" alt="e-commerce">
+                <h3>{{ page.what_we_do_third }}</h3>
+                  <p>{{ page.third_description | richtext  }}</p>
+              </div>
+          </div>  <!-- END .column-section -->
+
+          <div class="spacer-big"></div>
+
+          <div class="column-section clearfix">
+              <div class="column one-third align-center">
+                {% image page.fourth_image width-300 as fourth_image %}
+                <img src="{{ fourth_image.url }}" alt="e-commerce consulting">
+                <h3>{{ page.what_we_do_fourth }}</h3>
+                  <p>{{ page.fourth_description | richtext  }}</p>
+              </div>
+              <div class="column one-third align-center">
+                {% image page.fifth_image width-300 as fifth_image %}
+                <img src="{{ fifth_image.url }}" alt="branding">
+                <h3>{{ page.what_we_do_fifth }}</h3>
+                  <p>{{ page.fifth_description | richtext  }}</p>
+              </div>
+              <div class="column one-third last-col align-center">
+                {% image page.sixth_image width-300 as sixth_image %}
+                <img src="{{ sixth_image.url }}" alt="ongoing support">
+                <h3>{{ page.what_we_do_sixth }}</h3>
+                  <p>{{ page.sixth_description | richtext  }}</p>
+              </div>
+          </div>
+
+      </div> <!-- END .wrapper -->
+
+      <div class="spacer-big"></div>
+
+      <div class="fullwidth-section" style="background:rgba(252,205,211,0.2);">
+        <div class="fullwidth-content">
+              <div class="owl-slider content-slider">
+                  <div>
+                      <blockquote class="align-center">
+                          {{ page.first_quote | richtext }}
+                          <cite>{{ page.first_quote_speaker }}</cite>
+                      </blockquote>
+                  </div>
+                  <div>
+                      <blockquote class="align-center">
+                          {{ page.second_quote | richtext }}
+                          <cite>{{ page.second_quote_speaker }}</cite>
+                      </blockquote>
+                  </div>
+              </div>
+          </div>
+      </div> <!-- END .fullwidth-section -->
+
+      <div class="spacer-big"></div>
+
+      <div class="wrapper">
+        <div class="column-section clearfix">
+          <div class="column one-full align-center">
+            <h2>{{ page.first_title }}</h2>
+            <p>{{ page.first_subtitle }}</p>
+          </div>
+        </div>
+          <div class="column-section clearfix">
+          <div class="column one-third align-center price-table-website">
+            <div class="inner-box">
+              <h3><em>{{ page.first_plan_name }}</em></h3>
+              <div class="spacer-small"></div>
+              <p>{{ page.first_plan_description | richtext }}</p>
+              <h3 class="price">{{ page.first_plan_price }}</h3>
+              <a href="/inquire" class="sr-button button-big style-4">Inquire</a>
+            </div>
+          </div>
+          <div class="column one-third align-center price-table-website">
+            <div class="inner-box">
+              <h3><em>{{ page.second_plan_name }}</em></h3>
+              <div class="spacer-small"></div>
+              <p>{{ page.second_plan_description | richtext }}</p>
+              <div class="spacer-small"></div>
+              <h3 class="price">{{ page.second_plan_price }}</h3>
+              <a href="/inquire" class="sr-button button-big style-4">Inquire</a>
+            </div>
+          </div>
+          <div class="column one-third last-col align-center price-table-website">
+            <div class="inner-box">
+              <h3><em>{{ page.third_plan_name }}</em></h3>
+              <div class="spacer-small"></div>
+              <p>{{ page.third_plan_description | richtext }}</p>
+              <div class="spacer-small"></div>
+              <h3 class="price">{{ page.third_plan_price }}</h3>
+              <a href="/inquire" class="sr-button button-big style-4">Inquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-big"></div>
+
+      <div class="wrapper">
+        <div class="column-section clearfix">
+          <div class="column one-full align-center">
+            <h2>{{ page.second_title }}</h2>
+            <p>{{ page.second_subtitle }}</p>
+          </div>
+        </div>
+        <div class="column-section clearfix">
+          <div class="column one-third align-center price-table-e-commerce">
+            <div class="inner-box-ecom">
+              <h3><em>{{ page.first_plan_name_2 }}</em></h3>
+              <div class="spacer-small"></div>
+              <p>{{ page.first_plan_description_2 | richtext }}</p>
+              <div class="spacer-small"></div>
+              <h3 class="price">{{ page.first_plan_price_2 }}</h3>
+              <a href="/inquire" class="sr-button button-big style-5">Inquire</a>
+            </div>
+          </div>
+          <div class="column one-third align-center price-table-e-commerce">
+            <div class="inner-box-ecom">
+              <h3><em>{{ page.second_plan_name_2 }}</em></h3>
+              <div class="spacer-small"></div>
+              <p>{{ page.second_plan_description_2 | richtext }}</p>
+              <div class="spacer-small"></div>
+              <h3 class="price">{{ page.second_plan_price_2 }}</h3>
+              <a href="/inquire" class="sr-button button-big style-5">Inquire</a>
+            </div>
+          </div>
+          <div class="column one-third last-col align-center price-table-e-commerce">
+            <div class="inner-box-ecom">
+              <h3><em>{{ page.third_plan_name_2 }}</em></h3>
+              <div class="spacer-small"></div>
+              <p>{{ page.third_plan_description_2 | richtext }}</p>
+              <div class="spacer-small"></div>
+              <h3 class="price">{{ page.third_plan_price_2 }}</h3>
+              <a href="/inquire" class="sr-button button-big style-5">Inquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-big"></div>
+
+      <div class="wrapper">
+        <div class="column-section clearfix">
+          <div class="column one-full align-center">
+            <h2>{{ page.third_title }}</h2>
+            <p>{{ page.third_subtitle }}</p>
+          </div>
+        </div>
+        <div class="column-section clearfix">
+          <div class="column one-half align-center price-table-photography">
+            <div class="inner-box-photo">
+              <h3><em>{{ page.first_plan_name_3 }}</em></h3>
+              <div class="spacer-medium"></div>
+              <p>{{ page.first_plan_description_3 | richtext }}</p>
+              <h3 class="price">{{ page.first_plan_price_3 }}</h3>
+              <a href="/photoshoot-inquiry" class="sr-button button-big style-6">Inquire</a>
+            </div>
+          </div>
+          <div class="column one-half last-col align-center price-table-photography">
+            <div class="inner-box-photo">
+              <h3><em>{{ page.second_plan_name_3 }}</em></h3>
+              <div class="spacer-medium"></div>
+              <p>{{ page.second_plan_description_3 | richtext }}</p>
+              <h3 class="price">{{ page.second_plan_price_3 }}</h3>
+              <a href="/photoshoot-inquiry" class="sr-button button-big style-6">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="spacer-big"></div>
+      <div class="wrapper-small align-center">
+          <h6 class="title-alt uppercase">{{ page.contact_title_alt }}</h6>
+          <h2>{{ page.contact_title }}</h2>
+          <div class="spacer-medium"></div>
+          <p><a href="/contact" class="sr-button button-big">Contact us</a></p>
+      </div> <!-- END .wrapper-small -->
+      <div class="spacer-big"></div>
+
+</section>
+<!-- PAGEBODY -->
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/jquery.owl.carousel.min.js' %}"></script>
+{% endblock %}
