@@ -98,7 +98,7 @@ AWS_HEADERS = {
 
 # URL that handles the media served from MEDIA_ROOT, used for managing
 # stored files.
-MEDIA_URL = 'https://%s/s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 
 # Static Assets
