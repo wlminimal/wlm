@@ -1,4 +1,4 @@
-/* 
+/*
  *  Owl Carousel - Animate Plugin
  */
 .owl-container .animated {
@@ -37,7 +37,7 @@
   }
 }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
@@ -48,7 +48,7 @@
   transition: height 500ms ease-in-out;
 }
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl-container {
@@ -145,7 +145,7 @@
   display: block;
 }
 
-/* 
+/*
  * 	Owl Carousel - Lazy Load Plugin
  */
 .owl-container .owl-item .owl-lazy {
@@ -160,7 +160,7 @@
   transform-style: preserve-3d;
 }
 
-/* 
+/*
  * 	Owl Carousel - Video Plugin
  */
 .owl-container .owl-video-wrapper {
@@ -176,7 +176,6 @@
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -224,7 +223,7 @@
 /* 	NEXT / PREV
 	------------------  */
 .owl-nav.disabled { 	display: none; }
-	
+
 .owl-nav > div {
 	position: absolute;
 	top: 50%; margin-top: -15px;
@@ -239,12 +238,12 @@
 	right: inherit;
 	left: 20px;
 	}
-	
+
 .owl-nav .disabled {
   	opacity: 0;
   	cursor: default !important;
 	}
-	
+
 .owl-nav .owl-next:before, .owl-nav .owl-prev:before {
 	content: "";
 	width: 24px;
@@ -259,7 +258,7 @@
 	.text-light .owl-nav .owl-next:before, .text-light .owl-nav .owl-prev:before,
 	.nav-light .owl-nav .owl-next:before, .nav-light .owl-nav .owl-prev:before { background: #ffffff; }
 	.owl-nav .owl-prev:before { left: 5px; }
-	
+
 .owl-nav .owl-next:after, .owl-nav .owl-prev:after {
 	content: "";
 	position: absolute;
@@ -277,7 +276,7 @@
   	transform: translateY(-50%) rotate(45deg);
 	transition: all 0.2s ease;
 	}
-	.owl-nav .owl-prev:after { 
+	.owl-nav .owl-prev:after {
 	border: none;
 	border-bottom: 3px solid #000000;
     border-left: 3px solid #000000;
@@ -286,7 +285,7 @@
 	.text-light .owl-nav .owl-next:after, .text-light .owl-nav .owl-prev:after,
 	.nav-light .owl-nav .owl-next:after, .nav-light .owl-nav .owl-prev:after { border-color: #ffffff; }
 
-	
+
 
 /* 	DOTS
 	------------------  */
@@ -307,7 +306,7 @@
 	.owl-container.content-slider { padding-bottom: 35px; }
 	.owl-container.content-slider .owl-dots { bottom: 0px; }
 	.owl-container[data-dots=false] { padding-bottom: 0px; margin-bottom: 0px; }
-	
+
 .owl-dots .owl-dot {
   	float: left;
   	margin: 0px 4px;
@@ -317,7 +316,7 @@
 	background: none;
   	border-radius: 30px;
 	}
-	
+
 .owl-dots .owl-dot:before {
 	content: "";
 	position: absolute;
