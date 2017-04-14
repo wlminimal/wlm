@@ -64,4 +64,5 @@ wlm/media/
 
 
 staticfiles/
-config/settings.local.py
+config/settings/local.py
+local.py

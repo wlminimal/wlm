@@ -9,26 +9,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
-
+from os.path import join, exists, dirname
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (wlm/config/settings/base.py - 3 = wlm/)
 APPS_DIR = ROOT_DIR.path('wlm')
+ROOT_DIR_NAME = dirname(ROOT_DIR)
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
+env_file = join(ROOT_DIR_NAME, '.env')
+if exists(env_file):
+    environ.Env.read_env(str(env_file))
 
-# .env file, should load only in development environment
-READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
-
-if READ_DOT_ENV_FILE:
-    # Operating System Environment variables have precedence over variables defined in the .env file,
-    # that is to say variables from the .env files will only be used if not defined
-    # as environment variables.
-    env_file = str(ROOT_DIR.path('.env'))
-    print('Loading : {}'.format(env_file))
-    env.read_env(env_file)
-    print('The .env file has been loaded. See base.py for more information')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
