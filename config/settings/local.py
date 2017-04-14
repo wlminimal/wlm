@@ -32,9 +32,13 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='*;%%RDO6KILS|M;Te1A:*bJvPR`D|Q[9h
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 # MEDIA_ROOT = str(APPS_DIR('media'))
 
+
+# MEDIA CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+MEDIA_ROOT = str(APPS_DIR('media'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
-
 INSTALLED_APPS += ['storages', ]
 
 # AWS_ACCESS_KEY_ID = ''

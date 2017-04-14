@@ -3,9 +3,9 @@ from django import template
 
 register = template.Library()
 
-@register.assignment_tag(takes_context=True)
-def get_site_root(context):
-    return context['request'].site.root_page
+# @register.assignment_tag(takes_context=True)
+# def get_site_root(context):
+#     return context['request'].site.root_page
 
 @register.inclusion_tag("home/navbar/navbar.html", takes_context=True)
 def display_navbar(context):
