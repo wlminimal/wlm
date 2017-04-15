@@ -125,7 +125,7 @@
 					{% for website in websites %}
 						<div class="smartscroll-item portfolio-item portfolio-smart-item">
 								<div class="portfolio-item-inner item-inner">
-										<a href="portfolio-single-classic.html" class="thumb-hover text-light">
+										<a href="{% pageurl website %}" class="thumb-hover text-light">
 												{% image website.thumbnail_image width-1100 as thumbnail_image %}
 												<img src="{{ thumbnail_image.url }}" alt="Portfolio">
 												<div class="overlay-caption bottom align-left">
