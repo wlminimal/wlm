@@ -150,7 +150,7 @@ div.rich-text > ul {
   margin-left: 0px; }
 
 div.rich-text > ul > li {
-  list-style-type: square;
+  list-style-type: none;
   padding: 0; }
 
 form.checkform > ul > li {
