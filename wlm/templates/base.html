@@ -28,7 +28,16 @@
     <link rel="shortcut icon" href="{% static 'uploads/favicon.png' %}"/>
 
     <!-- DOCUMENT TITLE -->
-    <title>Digital Agency | We like minimal |</title>
+    <title>
+          {% block title %}
+              {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+          {% endblock %}
+          {% block title_suffix %}
+              {% with self.get_site.site_name as site_name %}
+                  {% if site_name %}- {{ site_name }}{% endif %}
+              {% endwith %}
+          {% endblock %}
+    </title>
 
     <!-- Hotjar Tracking Code for www.welikeminimal.com -->
     <script>
