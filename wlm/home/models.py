@@ -16,21 +16,21 @@ from modelcluster.fields import ParentalKey
 
 
 class HomePage(Page):
-    slider1_title = models.CharField(max_length=20, help_text='maximum length 20 characters',
+    slider1_title = models.TextField(max_length=100, help_text='maximum length 100 characters',
                                      default='We\'re a')
-    slider1_title_em = models.TextField(max_length=40, help_text='maximum length 40 characters, emphasize character',
+    slider1_title_em = models.TextField(max_length=100, help_text='maximum length 100 characters, emphasize character',
                                         default='Digital Studio')
-    slider1_subtitle = models.TextField(max_length=100, help_text='maximum legnth 100, subtitle in slider 1',
+    slider1_subtitle = models.TextField(max_length=200, help_text='maximum legnth 200, subtitle in slider 1',
                                         default='Photography and Web Development at one Best Place')
-    slider2_title_em = models.CharField(max_length=20, help_text='maximum length 20 characters and emphasize',
+    slider2_title_em = models.TextField(max_length=100, help_text='maximum length 100 characters and emphasize',
                                         default='Picture')
-    slider2_title = models.TextField(max_length=70, help_text='maximum length is 70 characters',
+    slider2_title = models.TextField(max_length=200, help_text='maximum length is 200 characters',
                                      default='is a worth a thousand words')
-    slider3_title = models.CharField(max_length=20, help_text='maximum length 20 characters',
+    slider3_title = models.TextField(max_length=100, help_text='maximum length 100 characters',
                                      default='Based in')
-    slider3_title_em = models.CharField(max_length=20, help_text='maximum length 20 characters emphasize',
+    slider3_title_em = models.TextField(max_length=100, help_text='maximum length 20 characters emphasize',
                                         default='Los Angeles')
-    slider3_title_2 = models.CharField(max_length=20, help_text='maximum length 20 characters',
+    slider3_title_2 = models.TextField(max_length=100, help_text='maximum length 20 characters',
                                         default='Downtown')
 
     slider1_image = models.ForeignKey(

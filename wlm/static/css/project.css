@@ -167,3 +167,6 @@ nav#main-nav ul:not(.underline) > li:hover > a {
 
 #hero #page-title {
   padding-top: 180px; }
+
+.text-light .tp-caption.dani-caption {
+  color: #FFFFFF; }
