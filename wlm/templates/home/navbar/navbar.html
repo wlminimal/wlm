@@ -12,7 +12,7 @@
     <div id="menu-inner">
         <nav id="main-nav">
             <ul>
-              <li><a href="{% pageurl site_root  %}">Home</a></li>
+              <li><a href="{% pageurl site_root %}">Home</a></li>
               {% for menuitem in menuitems %}
                 {% if menuitem.has_children %}
                 <li class="menu-item-has-children"><a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>

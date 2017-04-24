@@ -93,9 +93,9 @@
                   </a>
               </div>
 
-
+              {% get_site_root as site_root %}
               <!-- MAIN NAVIGATION -->
-              {% display_navbar %}
+              {% display_navbar parent=site_root %}
 
   		</div> <!-- END .header-inner -->
   	</header>
