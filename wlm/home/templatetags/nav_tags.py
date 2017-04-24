@@ -10,8 +10,7 @@ def get_site_root(context):
 
 
 @register.inclusion_tag("home/navbar/navbar.html", takes_context=True)
-def display_navbar(context, parent):
-    calling_page = context['self']
+def display_navbar(context, parent, calling_page=None):
     menuitems = parent.get_children().live().in_menu()
     for menuitem in menuitems:
         menuitem.has_children = menuitem.get_children().live().in_menu().exists()
