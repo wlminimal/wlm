@@ -14,6 +14,9 @@ from wagtail.wagtailforms.edit_handlers import FormSubmissionsPanel
 from modelcluster.fields import ParentalKey
 
 
+class BasicPage(Page):
+    pass
+
 
 class HomePage(Page):
     slider1_title = models.TextField(max_length=100, help_text='maximum length 100 characters',
@@ -82,6 +85,14 @@ class HomePage(Page):
                                             help_text='maximum length 20 characters',
                                             default='like minimal.')
 
+    service_col_1_header = models.CharField(max_length=100, default="Website Design & Development")
+    service_col_1_description = RichTextField(default="Description for service")
+    service_col_2_header = models.CharField(max_length=100, default="E-Commerce Web Development")
+    service_col_2_description = RichTextField(default="Description for service")
+    service_col_3_header = models.CharField(max_length=100, default="Digital Marketing Strategy")
+    service_col_3_description = RichTextField(default="Description for service")
+    service_col_4_header = models.CharField(max_length=100, default="Creative Photographer")
+    service_col_4_description = RichTextField(default="Description for service")
 
     content_panels = Page.content_panels + [
 
@@ -106,6 +117,17 @@ class HomePage(Page):
         FieldPanel('page_body_subtitle_em', classname='full'),
         FieldPanel('page_body_subtitle_2', classname='full'),
 
+        FieldPanel('service_col_1_header'),
+        FieldPanel('service_col_1_description'),
+
+        FieldPanel('service_col_2_header'),
+        FieldPanel('service_col_2_description'),
+
+        FieldPanel('service_col_3_header'),
+        FieldPanel('service_col_3_description'),
+
+        FieldPanel('service_col_4_header'),
+        FieldPanel('service_col_4_description'),
     ]
 
 
