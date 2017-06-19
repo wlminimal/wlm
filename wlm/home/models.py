@@ -230,6 +230,7 @@ class WebsiteCategory(models.Model):
     panels = [
         FieldPanel('name'),
     ]
+
     def __str__(self):
         return self.name
 
@@ -251,10 +252,12 @@ class WebsitesPage(Page):
                                       help_text='Max Length is 40 characters',
                                       default='less code')
 
+    subpage_types = ["home.WebsitePage"]
+
     def get_context(self, request):
         # update context
         context = super(WebsitesPage, self).get_context(request)
-        websitesPages = self.get_children().live()
+        websitesPages = self.get_children().live().order_by('-first_published_at')
         context['websitesPages'] = websitesPages
         return context
 
@@ -327,7 +330,6 @@ class WebsitePage(Page):
         related_name='+',
         help_text="600 x anysize(400, 600, 800) px image"
     )
-
 
     content_panels = Page.content_panels + [
         FieldPanel('project_title'),
