@@ -75,9 +75,9 @@
 
       <!-- PAGE LOADER -->
       <div id="page-loader" class="pulsing">
-      	<!-- <div class="loader-name"><img src="{% static 'uploads/logo-dani-dark.png' %}" srcset="files/uploads/logo-dani-dark.png 1x, files/uploads/logo-dani-dark@2x.png 2x" alt="Loader Logo"></div> -->
+      	<div class="loader-name"><img src="{% static 'uploads/loading_logo.png' %}" srcset="{% static 'uploads/loading_logo.png' %} 1x, {% static 'uploads/loading_logo.png' %} 2x" alt="Loader Logo"></div>
           <div class="loader-circle">
-          	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 253.4 253.4" style="enable-background:new 0 0 253.4 253.4;" xml:space="preserve"><circle cx="126.7" cy="126.7" r="124.2"/>
+          	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 253.4 253.4" style="enable-background:new 0 0 253.4 253.4;stroke:#6534ff;" xml:space="preserve"><circle cx="126.7" cy="126.7" r="124.2"/>
       		</svg>
          	</div>
       </div>
@@ -91,8 +91,8 @@
               <!-- LOGO -->
               <div id="logo">
                   <a href="/">
-                  	<img id="dark-logo" src="{% static 'uploads/logo-main.svg' %}" srcset="{% static 'uploads/logo-main.svg' %} 1x, {% static 'uploads/logo-main.svg' %} 2x" alt="Logo Dark">
-                  	<img id="light-logo" src="{% static 'uploads/logo-main-white.svg' %}" srcset="{% static 'uploads/logo-main-white.svg' %} 1x, {% static 'uploads/logo-main-white.svg' %} 2x" alt="Logo light">
+                  	<img id="dark-logo" src="{% static 'uploads/main_logo.svg' %}" srcset="{% static 'uploads/main_logo.svg' %} 1x, {% static 'uploads/main_logo.svg' %} 2x" alt="Logo Dark">
+                  	<img id="light-logo" src="{% static 'uploads/main_logo.svg' %}" srcset="{% static 'uploads/main_logo.svg' %} 1x, {% static 'uploads/main_logo.svg' %} 2x" alt="Logo light">
                   </a>
               </div>
 
@@ -153,7 +153,8 @@
                 </div>
 
                 <div class="column one-half last-col align-right">
-                 	<small>© 2017 by WLM - Made by <a href="mailto:wlminimal@gmail.com">We like minimal</a></small>
+                 	<small>© 2017 by WLM - Made by <a href="mailto:team@welikeminimal.com">
+                        <img class="footer-logo" src="{% static 'uploads/footer_logo.svg' %}" alt="footer-logo"></a></small>
                 </div>
             </div>
         </div>

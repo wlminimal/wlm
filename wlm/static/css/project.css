@@ -170,3 +170,8 @@ nav#main-nav ul:not(.underline) > li:hover > a {
 
 .text-light .tp-caption.dani-caption {
   color: #FFFFFF; }
+
+.footer-logo {
+  padding-top: 7px;
+  padding-left: 10px;
+}
